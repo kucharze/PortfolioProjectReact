@@ -10,6 +10,14 @@
   border: solid blue;
 }
 
+.work {
+  border: solid green;
+}
+
+.top {
+  border: solid red;
+}
+
 .info {
   display: flex;
   justify-content: center;
