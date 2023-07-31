@@ -18,6 +18,19 @@
   border: solid red;
 }
 
+.progress {
+  border: solid orange;
+}
+
+.footer {
+  border: solid purple;
+  background-color: navy;
+  color: white;
+  display: flex;
+  padding: 1em;
+  justify-content: space-evenly;
+}
+
 .info {
   display: flex;
   justify-content: center;

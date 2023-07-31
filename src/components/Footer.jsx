@@ -3,8 +3,8 @@ import React from 'react'
 function Footer() {
   return (
     <div className='footer'>
-      <h1>The footer</h1>
-      <h1>Include socials info</h1>
+      <h3>Email Make a link: zacharyk323@live.com</h3>
+      <h3>Phone: 412-469-2233</h3>
     </div>
   )
 }
