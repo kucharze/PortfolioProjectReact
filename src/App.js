@@ -6,10 +6,12 @@ import WorkDesc from "./components/WorkDesc";
 import TopProjects from "./components/TopProjects";
 import InProgress from "./components/InProgress";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       {/* <h1>Weather banner/ Maybe use pokemnon??</h1> */}
       <Baner />
       {/* <h1>Title header with name and description</h1> */}
