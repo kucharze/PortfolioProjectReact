@@ -4,6 +4,13 @@
 
 .banner {
   border: solid black;
+  color: white;
+  background-size: cover;
+  background-image: url("https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-switch/e/ed/Pokemon_Sword_Shield_Walkthrough_0079.jpg?width=1280");
+}
+
+.pokemon {
+  height: 150px;
 }
 
 .title {
@@ -37,8 +44,4 @@
 }
 .info > h3 {
   margin: 10px;
-}
-
-.pokemon {
-  height: 200px;
 }
