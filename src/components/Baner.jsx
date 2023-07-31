@@ -30,7 +30,7 @@ function Baner() {
             <h4>Name: {pokemon.name}</h4>
             <div className="info">
                 <h4>Height: {pokemon.height} M.</h4>
-                <h4>Weight: {pokemon.weight} KG.</h4>
+                <h4>Weight: {pokemon.weight} G.</h4>
             </div>
             <img src={pokemon.sprites.front_default} alt="" className='pokemon' />
         </div>
