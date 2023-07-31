@@ -4,6 +4,8 @@ import Baner from "./components/Baner";
 import Title from "./components/Title";
 import WorkDesc from "./components/WorkDesc";
 import TopProjects from "./components/TopProjects";
+import InProgress from "./components/InProgress";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,11 +18,14 @@ function App() {
       <WorkDesc />
 
       {/* <h1>Top projects</h1> */}
+      <button>Toggle display of projects section</button>
       <TopProjects />
 
-      <h1>In progress projects</h1>
-      <h3>Add link to pokemon project repo</h3>
-      <h1>The footer/ Maybe with other socials</h1>
+      {/* <h1>In progress projects</h1> */}
+      <button>Toggle display of in progress projects section</button>
+      <InProgress />
+      {/* <h1>The footer/ Maybe with other socials</h1> */}
+      <Footer />
     </div>
   );
 }
