@@ -24,13 +24,13 @@ function Baner() {
   }, []);
   return (
     <div className='banner'>
-      <h5>Pokemon of the day</h5>
+      <h3>Pokemon of the day</h3>
       {
         pokemon ? <div className='pokemondisplay'>
-            <h3>Name: {pokemon.name}</h3>
+            <h4>Name: {pokemon.name}</h4>
             <div className="info">
-                <h3>Height: {pokemon.height} M.</h3>
-                <h3>Weight: {pokemon.weight} KG.</h3>
+                <h4>Height: {pokemon.height} M.</h4>
+                <h4>Weight: {pokemon.weight} KG.</h4>
             </div>
             <img src={pokemon.sprites.front_default} alt="" className='pokemon' />
         </div>
