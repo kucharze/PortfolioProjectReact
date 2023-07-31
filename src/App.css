@@ -38,6 +38,17 @@
 
 .top {
   border: solid red;
+  padding: 10px;
+}
+
+.githubLink {
+  border: solid green;
+  font-size: 20px;
+  /* text-decoration: none; */
+}
+
+.githubLink:hover {
+  background-color: yellow;
 }
 
 .progress {

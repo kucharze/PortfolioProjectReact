@@ -1,11 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function TopProjects() {
+function TopProjects({projects}) {
   return (
     <div className='top'>
       <h1>Top Projects</h1>
-      <h3>Loop through different link urls</h3>
-      <h3>Add links to github repos</h3>
+      {
+        projects.map((item)=>{
+            return <div>
+                <h1></h1>
+                <Link className='githubLink' key={item.name} to={item.url}>{item.name}</Link>
+            </div>
+        })
+      }
     </div>
   )
 }
