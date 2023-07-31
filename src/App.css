@@ -6,6 +6,14 @@
   border: solid black;
 }
 
+.info {
+  display: flex;
+  justify-content: center;
+}
+.info > h3 {
+  margin: 10px;
+}
+
 .pokemon {
   height: 200px;
 }

@@ -8,7 +8,7 @@ function Baner() {
     try {
       let item = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${Math.floor(
-          Math.random() * (100 - 1 + 1) + 1
+          Math.random() * (300 - 1 + 1) + 1
         )}`
       );
       let data = await item.json();
@@ -27,10 +27,11 @@ function Baner() {
       <h5>Pokemon of the day</h5>
       {
         pokemon ? <div className='pokemondisplay'>
-            <h1>Info</h1>
             <h3>Name: {pokemon.name}</h3>
-            <h3>Height: {pokemon.height}</h3>
-            <h3>Weight: {pokemon.weight}</h3>
+            <div className="info">
+                <h3>Height: {pokemon.height} M.</h3>
+                <h3>Weight: {pokemon.weight} KG.</h3>
+            </div>
             <img src={pokemon.sprites.front_default} alt="" className='pokemon' />
         </div>
         :<h1>Loading</h1>
