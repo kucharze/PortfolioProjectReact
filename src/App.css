@@ -6,6 +6,10 @@
   border: solid black;
 }
 
+.title {
+  border: solid blue;
+}
+
 .info {
   display: flex;
   justify-content: center;
