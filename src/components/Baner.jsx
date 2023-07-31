@@ -12,7 +12,7 @@ function Baner() {
         )}`
       );
       let data = await item.json();
-      console.log("opp:", data);
+      //console.log("opp:", data);
       setPokemon(data);
     } catch (err) {
       console.log("We did not find a valid pokemon");
@@ -20,17 +20,17 @@ function Baner() {
   };
 
   useEffect(() => {
-    //getPokemon();
     getOpp();
-    // getMove();
   }, []);
   return (
     <div className='banner'>
-      <h3>The Banner</h3>
       <h5>Pokemon of the day</h5>
       {
-        pokemon ? <div>
+        pokemon ? <div className='pokemondisplay'>
             <h1>Info</h1>
+            <h3>Name: {pokemon.name}</h3>
+            <h3>Height: {pokemon.height}</h3>
+            <h3>Weight: {pokemon.weight}</h3>
             <img src={pokemon.sprites.front_default} alt="" className='pokemon' />
         </div>
         :<h1>Loading</h1>
