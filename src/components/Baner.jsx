@@ -25,7 +25,7 @@ function Baner() {
               <img src={pokemon.sprites.back_default} alt="" className='pokemon' />
               <br/>
               {
-                vis && <button onClick={getMove}>Load moves</button>
+                vis && <button className='moves' onClick={getMove}>Load moves</button>
               }
               
               {
@@ -44,6 +44,15 @@ function Baner() {
                   <p>Weight: {opp.weight} G.</p>
               </div>
               <img src={opp.sprites.front_default} alt="" className='pokemon' />
+              <br/>
+              <p className='oppmoves'>
+              {
+                moves && moves.map((item)=>{
+                  return item.name + "  "
+                })
+              }
+              </p>
+              
           </div>
           :<h1>Loading</h1>
         }

@@ -6,7 +6,6 @@
   border: solid black;
   color: white;
   height: 350px;
-
   background-size: cover;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2CDlRXd_HFENyi8EsT0aIpOlFdMFz0ro0FH6XMFmfkXPvZ5MyiTlpu7T5hgaqP5TJTM&usqp=CAU");
 }
@@ -27,6 +26,13 @@
   height: 100px;
 }
 .moves {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  margin: 10px;
+}
+
+.oppmoves {
   font-size: 15px;
   background-color: green;
   color: white;
