@@ -59,6 +59,15 @@
   /* margin-bottom: 10px; */
 }
 
+.progLinks {
+  width: 550px;
+}
+.progLinks > a {
+  padding: 10px;
+  display: inline-block;
+  /* margin-bottom: 10px; */
+}
+
 .githubLink {
   border: solid green;
   font-size: 25px;
@@ -73,6 +82,9 @@
 
 .progress {
   border: solid orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer {
