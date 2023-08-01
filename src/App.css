@@ -27,10 +27,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("computer4.png");
+  background-image: url("computer5.png");
   background-size: cover;
-  height: 800px;
-  padding: 10px;
+  background-repeat: no-repeat;
+  height: 720px;
+  padding-top: 80px;
 }
 .description {
   width: 200px;
