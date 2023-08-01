@@ -111,6 +111,13 @@ let AppContextProvider = (props) => {
       setWin(true);
       setWinner("player");
     } else {
+      let num = Math.floor(Math.random() * (4 - 0) + 0);
+      let newHealth = health - oppMoves[num].power;
+      setHealth(newHealth);
+      if (newHealth <= 0) {
+        setWin(true);
+        setWinner("com");
+      }
     }
   };
 
