@@ -17,4 +17,11 @@ const projects = [
   },
 ];
 
-module.exports = { projects };
+const progress = [
+  {
+    name: "Pokemon battle simulator",
+    url: "https://github.com/kucharze/PokemonProject",
+  },
+];
+
+module.exports = { projects, progress };

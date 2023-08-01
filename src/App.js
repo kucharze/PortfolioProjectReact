@@ -7,7 +7,7 @@ import TopProjects from "./components/TopProjects";
 import InProgress from "./components/InProgress";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { projects } from "./models/projects";
+import { projects, progress } from "./models/projects";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
 
       {/* <h1>In progress projects</h1> */}
       <button>Toggle display of in progress projects section</button>
-      <InProgress />
+      <InProgress project={progress} />
       {/* <h1>The footer/ Maybe with other socials</h1> */}
       <Footer />
     </div>
