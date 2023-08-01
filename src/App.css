@@ -41,6 +41,11 @@
   width: 450px;
 }
 
+.btn {
+  font-size: 20px;
+  margin: 1em;
+}
+
 .work {
   border: solid green;
 }

@@ -21,11 +21,13 @@ function App() {
       <WorkDesc />
 
       {/* <h1>Top projects</h1> */}
-      <button>Toggle display of projects section</button>
+      <button className="btn">Toggle display of projects section</button>
       <TopProjects projects={projects} />
 
       {/* <h1>In progress projects</h1> */}
-      <button>Toggle display of in progress projects section</button>
+      <button className="btn">
+        Toggle display of in progress projects section
+      </button>
       <InProgress project={progress} />
       {/* <h1>The footer/ Maybe with other socials</h1> */}
       <Footer />
