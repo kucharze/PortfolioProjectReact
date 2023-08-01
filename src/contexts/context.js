@@ -6,9 +6,11 @@ export const AppContext = createContext();
 let AppContextProvider = (props) => {
   const [pokemon, setPokemon] = useState(null);
   const [opp, setOpp] = useState(null);
+  const [health, setHealth] = useState(0);
   const [moves, setMoves] = useState(null);
   const [oppMoves, setOppMoves] = useState(null);
   const [vis, setVis] = useState(true);
+  const [oppHealth, setOppHealth] = useState(0);
 
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
@@ -74,6 +76,7 @@ let AppContextProvider = (props) => {
       );
       let data = await item.json();
       console.log(data);
+      setHealth(data.stats[0].base_stat);
       setPokemon(data);
     } catch (err) {
       console.log("We did not find a valid pokemon");
@@ -90,13 +93,17 @@ let AppContextProvider = (props) => {
       );
       let data = await item.json();
       console.log("opp:", data);
+      setOppHealth(data.stats[0].base_stat);
       setOpp(data);
     } catch (err) {
       console.log("We did not find a valid pokemon");
     }
   };
 
-  // const doMove
+  const doMove = (move) => {
+    console.log(moves[move].name);
+    setOppHealth(oppHealth - moves[move].power);
+  };
 
   return (
     <AppContext.Provider
@@ -104,7 +111,9 @@ let AppContextProvider = (props) => {
         pokemon,
         setPokemon,
         getPokemon,
+        health,
         opp,
+        oppHealth,
         setOpp,
         getOpp,
         moves,
@@ -113,6 +122,7 @@ let AppContextProvider = (props) => {
         setOppMoves,
         getMove,
         vis,
+        doMove,
       }}
     >
       {props.children}
