@@ -8,7 +8,6 @@ function TopProjects({projects}) {
       {
         projects.map((item)=>{
             return <div>
-                <h1></h1>
                 <Link className='githubLink' key={item.name} to={item.url}>{item.name}</Link>
             </div>
         })
