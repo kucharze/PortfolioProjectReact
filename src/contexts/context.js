@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import axios from "axios";
 
 export const AppContext = createContext();
 
@@ -6,46 +7,52 @@ let AppContextProvider = (props) => {
   const [pokemon, setPokemon] = useState(null);
   const [opp, setOpp] = useState(null);
   const [moves, setMoves] = useState(null);
+  const [oppMoves, setOppMoves] = useState(null);
+  const [vis, setVis] = useState(true);
 
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
     let moveList = [];
     let i = 0;
-    for (let i = 0; i < 4; i++) {
-      // console.log(
-      //   "Move url to pull"
-      //   // pokemon.moves[Math.floor(Math.random() * ( - 1 + 1) + 1)].move.url
-      // );
+    while (i < 4) {
+      console.log("Trying to poll a move");
       let pos = Math.floor(Math.random() * (pokemon.moves.length - 1) + 1);
-      let item = await fetch(
-        `${
-          pokemon.moves[
-            Math.floor(Math.random() * (pokemon.moves.length - 1) + 1)
-          ].move.url
-        }`
-      );
-      let data = await item.json();
+      console.log(pokemon.moves[pos].move.url);
+      let item = await axios.get(`${pokemon.moves[pos].move.url}`);
+
+      let data = await item.data;
+      if (data.power === null) {
+        continue;
+      }
       console.log("move", data);
       moveList.push(data);
+      i++;
     }
     await setMoves(moveList);
+    setVis(false);
   };
 
   const getPokemon = async () => {
     try {
-      let item = await fetch("https://pokeapi.co/api/v2/pokemon/zamazenta");
+      let item = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${Math.floor(
+          Math.random() * (400 - 1 + 1) + 1
+        )}`
+      );
       let data = await item.json();
       console.log(data);
       setPokemon(data);
     } catch (err) {
       console.log("We did not find a valid pokemon");
     }
+    //getMove();
   };
+
   const getOpp = async () => {
     try {
       let item = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${Math.floor(
-          Math.random() * (100 - 1 + 1) + 1
+          Math.random() * (400 - 1 + 1) + 1
         )}`
       );
       let data = await item.json();
@@ -67,7 +74,10 @@ let AppContextProvider = (props) => {
         getOpp,
         moves,
         setMoves,
+        oppMoves,
+        setOppMoves,
         getMove,
+        vis,
       }}
     >
       {props.children}
