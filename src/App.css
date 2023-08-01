@@ -44,12 +44,20 @@
 .top {
   border: solid red;
   padding: 10px;
+  background-color: rgb(161, 195, 248);
+  height: 300px;
+}
+
+.projLinks > a {
+  padding: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .githubLink {
   border: solid green;
-  font-size: 20px;
-  margin-bottom: 1em;
+  font-size: 25px;
+  margin: 10px;
+  /* padding: 3em; */
   /* text-decoration: none; */
 }
 
@@ -63,7 +71,7 @@
 
 .footer {
   border: solid purple;
-  background-color: navy;
+  background-color: rgb(125, 171, 234);
   color: white;
   display: flex;
   padding: 1em;
