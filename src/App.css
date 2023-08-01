@@ -7,8 +7,24 @@
   color: white;
   height: 400px;
   background-size: cover;
-
+  width: 800px;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2CDlRXd_HFENyi8EsT0aIpOlFdMFz0ro0FH6XMFmfkXPvZ5MyiTlpu7T5hgaqP5TJTM&usqp=CAU");
+}
+
+.pokemonTitle {
+  background-color: darkgreen;
+  color: white;
+  /* height: 400px; */
+  background-size: cover;
+  width: 800px;
+}
+
+.info {
+  background-color: darkgreen;
+  color: white;
+  /* height: 400px; */
+  background-size: cover;
+  /* width: 800px; */
 }
 .battle {
   display: flex;
@@ -47,7 +63,7 @@
   align-items: center;
   /* background: center fixed; */
   background-image: url("computer5.jpg");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 750px;
@@ -135,7 +151,7 @@
   margin: 10px;
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1450px) {
   .title {
     border: solid blue;
     display: flex;

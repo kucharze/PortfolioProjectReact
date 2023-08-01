@@ -14,9 +14,11 @@ function Baner() {
 
   return (
     <div className='banner'>
-      <h3>Pokemon battle of the day</h3>
+      <h3 className='pokemonTitle'>Pokemon battle of the day</h3>
       {
-        win && (winner == "player" ? <h1>You win</h1> : <h1>You loose</h1>)
+        win && (winner == "player" ? 
+        <div><h1>You win</h1></div> : 
+        <div><h1>You lose</h1></div> )
       }
       <div className="battle">
         {
