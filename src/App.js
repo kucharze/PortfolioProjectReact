@@ -13,10 +13,11 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <h1>Weather banner/ Maybe use pokemnon??</h1> */}
-      <Baner />
+
       {/* <h1>Title header with name and description</h1> */}
       <Title />
+      {/* <h1>Weather banner/ Maybe use pokemnon??</h1> */}
+      <Baner />
       {/* <h1>Description of types of work that I have done</h1> */}
       <WorkDesc />
 
