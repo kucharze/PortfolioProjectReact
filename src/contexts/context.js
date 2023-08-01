@@ -40,15 +40,15 @@ let AppContextProvider = (props) => {
       i++;
     }
     await setMoves(moveList);
-    setVis(false);
+    getOppMoves();
   };
 
   const getOppMoves = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
-    let moveList = [];
+    let oppList = [];
     let i = 0;
     while (i < 4) {
-      console.log("Trying to poll a move");
+      console.log("Trying to poll an opponent move");
       let pos = Math.floor(Math.random() * (opp.moves.length - 1) + 1);
       console.log(opp.moves[pos].move.url);
       let item = await axios.get(`${opp.moves[pos].move.url}`);
@@ -57,11 +57,11 @@ let AppContextProvider = (props) => {
       if (data.power === null) {
         continue;
       }
-      console.log("move", data);
-      moveList.push(data);
+      console.log("Opp move", data);
+      oppList.push(data);
       i++;
     }
-    await setOppMoves(moveList);
+    await setOppMoves(oppList);
     setVis(false);
   };
 
@@ -95,6 +95,8 @@ let AppContextProvider = (props) => {
       console.log("We did not find a valid pokemon");
     }
   };
+
+  // const doMove
 
   return (
     <AppContext.Provider
