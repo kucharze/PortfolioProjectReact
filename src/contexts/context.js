@@ -11,6 +11,8 @@ let AppContextProvider = (props) => {
   const [oppMoves, setOppMoves] = useState(null);
   const [vis, setVis] = useState(true);
   const [oppHealth, setOppHealth] = useState(0);
+  const [win, setWin] = useState(false);
+  const [winner, setWinner] = useState(null);
 
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
@@ -41,6 +43,7 @@ let AppContextProvider = (props) => {
       moveList.push(data);
       i++;
     }
+    setVis(false);
     await setMoves(moveList);
     getOppMoves();
   };
@@ -64,7 +67,6 @@ let AppContextProvider = (props) => {
       i++;
     }
     await setOppMoves(oppList);
-    setVis(false);
   };
 
   const getPokemon = async () => {
@@ -103,6 +105,13 @@ let AppContextProvider = (props) => {
   const doMove = (move) => {
     console.log(moves[move].name);
     setOppHealth(oppHealth - moves[move].power);
+
+    if (oppHealth - moves[move].power <= 0) {
+      console.log("You win");
+      setWin(true);
+      setWinner("player");
+    } else {
+    }
   };
 
   return (
@@ -123,6 +132,8 @@ let AppContextProvider = (props) => {
         getMove,
         vis,
         doMove,
+        win,
+        winner,
       }}
     >
       {props.children}
