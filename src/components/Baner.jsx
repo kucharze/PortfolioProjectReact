@@ -3,16 +3,17 @@ import { AppContext } from '../contexts/context';
 
 
 function Baner() {
-  let {pokemon,setPokemon, opp,setOpp, getPokemon, getOpp} = useContext(AppContext)
+  let {pokemon,setPokemon, opp,setOpp, getPokemon, getOpp, moves, oppMoves, getMove,vis} = useContext(AppContext)
 
   useEffect(() => {
     //getPok();
-    //getPokemon();
-    //getOpp();
+    getPokemon();
+    
+    getOpp();
   }, []);
   return (
     <div className='banner'>
-      <h3>Pokemon of the day</h3>
+      <h3>Pokemon battle of the day</h3>
       <div className="battle">
         {
           pokemon ? <div className='pokemondisplay'>
@@ -22,6 +23,16 @@ function Baner() {
                   <p>Weight: {pokemon.weight} G.</p>
               </div>
               <img src={pokemon.sprites.back_default} alt="" className='pokemon' />
+              <br/>
+              {
+                vis && <button onClick={getMove}>Load moves</button>
+              }
+              
+              {
+                moves && moves.map((item)=>{
+                  return <button className='moves' key={item.name}>{item.name}</button>
+                })
+              }
           </div>
           :<h1>Loading</h1>
         }
