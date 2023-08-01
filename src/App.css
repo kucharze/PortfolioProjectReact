@@ -30,11 +30,12 @@
   background-image: url("computer5.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 720px;
-  padding-top: 80px;
+  height: 710px;
+  padding-top: 85px;
+  font-size: 20px;
 }
 .description {
-  width: 200px;
+  width: 300px;
 }
 
 .work {
