@@ -16,8 +16,7 @@ function App() {
 
       {/* <h1>Title header with name and description</h1> */}
       <Title />
-      {/* <h1>Weather banner/ Maybe use pokemnon??</h1> */}
-      <Baner />
+
       {/* <h1>Description of types of work that I have done</h1> */}
       <WorkDesc />
 
@@ -26,6 +25,7 @@ function App() {
       <TopProjects projects={projects} />
 
       {/* <h1>In progress projects</h1> */}
+
       <button className="btn">
         Toggle display of in progress projects section
       </button>

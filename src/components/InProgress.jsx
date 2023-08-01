@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Baner from './Baner'
 
 function InProgress({project}) {
   return (
@@ -13,7 +14,8 @@ function InProgress({project}) {
 
         }
       </div>
-      
+      <h2>Play the Prototype</h2>
+      <Baner/>
     </div>
   )
 }
