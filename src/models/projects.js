@@ -11,6 +11,10 @@ const projects = [
     name: "Per Scholas Crazy eights game",
     url: "https://github.com/kucharze/PerScholasProject1",
   },
+  {
+    name: "Per Scholas Mock up site",
+    url: "https://github.com/kucharze/PerScholasMockup",
+  },
 ];
 
 module.exports = { projects };
