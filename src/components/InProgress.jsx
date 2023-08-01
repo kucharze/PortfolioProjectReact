@@ -11,7 +11,7 @@ function InProgress({project}) {
                 return <Link to={item.url} key={item.name} className='githubLink'>{item.name}</Link>
             })
 
-         }
+        }
       </div>
       
     </div>

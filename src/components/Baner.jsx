@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { AppContext } from '../contexts/context';
 
 
 function Baner() {
+  let { opp} = useContext(AppContext)
     const [pokemon,setPokemon] = useState(null)
 
-    const getOpp = async () => {
+  const getPok = async () => {
     try {
       let item = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${Math.floor(
@@ -20,7 +22,7 @@ function Baner() {
   };
 
   useEffect(() => {
-    getOpp();
+    getPok();
   }, []);
   return (
     <div className='banner'>
