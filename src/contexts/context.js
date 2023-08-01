@@ -13,6 +13,7 @@ let AppContextProvider = (props) => {
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
     let moveList = [];
+    let checked = false;
     let i = 0;
     while (i < 4) {
       console.log("Trying to poll a move");
@@ -24,11 +25,43 @@ let AppContextProvider = (props) => {
       if (data.power === null) {
         continue;
       }
+      for (let i = 0; i < moveList.length; i++) {
+        if (moveList[i].name === data.name) {
+          checked = true;
+          break;
+        }
+      }
+      if (checked == true) {
+        checked = false;
+        continue;
+      }
       console.log("move", data);
       moveList.push(data);
       i++;
     }
     await setMoves(moveList);
+    setVis(false);
+  };
+
+  const getOppMoves = async () => {
+    // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
+    let moveList = [];
+    let i = 0;
+    while (i < 4) {
+      console.log("Trying to poll a move");
+      let pos = Math.floor(Math.random() * (opp.moves.length - 1) + 1);
+      console.log(opp.moves[pos].move.url);
+      let item = await axios.get(`${opp.moves[pos].move.url}`);
+
+      let data = await item.data;
+      if (data.power === null) {
+        continue;
+      }
+      console.log("move", data);
+      moveList.push(data);
+      i++;
+    }
+    await setOppMoves(moveList);
     setVis(false);
   };
 
