@@ -34,8 +34,11 @@
   padding-top: 85px;
   font-size: 20px;
 }
+.profile {
+  height: 150px;
+}
 .description {
-  width: 300px;
+  width: 450px;
 }
 
 .work {
