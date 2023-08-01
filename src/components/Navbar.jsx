@@ -9,7 +9,7 @@ function Navbar() {
          alt="" 
          className='github'/>
      </Link>
-      <h2>412-469-2233</h2>
+      <h2>W E L C O M E</h2>
       <h2>zacharyk323@live.com</h2>
     </div>
   )
