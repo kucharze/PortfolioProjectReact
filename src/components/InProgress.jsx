@@ -17,11 +17,8 @@ function InProgress({project}) {
             })
 
         }
+        <h2>See protoype below</h2>
       </div>
-      <button className='prototype' onClick={()=>{setOpen(!open)}}>Play the Prototype</button>
-      {
-        open && <Baner/>
-      }
       
     </div>
   )
