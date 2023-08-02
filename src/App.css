@@ -123,6 +123,14 @@
   border: solid green;
   font-size: 25px;
   margin: 10px;
+  height: 200px;
+  width: 220px;
+  padding-left: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-image: url("Folder-orange.jpg");
+  background-size: cover;
   /* padding: 3em; */
   /* text-decoration: none; */
 }
