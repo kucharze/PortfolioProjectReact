@@ -26,10 +26,10 @@ function App() {
       {/* <h1>Description of types of work that I have done</h1> */}
       <WorkDesc />
 
-      {/* <h1>Top projects</h1> */}
-      <div className="topProjectList">
+      <div className="projects">
         <button
-          className="btn"
+          // className="btn"
+          className={"btn"}
           onClick={() => {
             setOpenTop(!openTop);
           }}
@@ -38,14 +38,8 @@ function App() {
           <br />
           <img src={openTop ? fgOpen : fgClosed} alt="" className="fileCab" />
         </button>
-        {openTop && <TopProjects projects={projects} />}
-      </div>
-
-      {/* <h1>In progress projects</h1> */}
-
-      <div className="inProgressList">
         <button
-          className="btn"
+          className={"btn"}
           onClick={() => {
             setOpenProg(!openProg);
           }}
@@ -54,7 +48,21 @@ function App() {
           <br />
           <img src={openProg ? fgOpen : fgClosed} alt="" className="fileCab" />
         </button>
+      </div>
+      {/* <h1>Top projects</h1> */}
+      <div className="topProjectList">
+        {openTop && <TopProjects projects={projects} />}
+      </div>
+
+      {/* <h1>In progress projects</h1> */}
+
+      <div className="inProgressList">
         {openProg && <InProgress project={progress} />}
+      </div>
+
+      <div className="games">
+        <h1></h1>
+        <Baner />
       </div>
 
       {/* <h1>The footer/ Maybe with other socials</h1> */}
