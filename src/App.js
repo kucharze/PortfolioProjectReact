@@ -9,8 +9,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { projects, progress } from "./models/projects";
 import fgClosed from "./FCGclosed.jpg";
+import fgOpen from "./FCGopen.jpg";
+import { useState } from "react";
 
 function App() {
+  const [openTop, setOpenTop] = useState(false);
+  const [openProg, setOpenProg] = useState(false);
+
   return (
     <div className="App">
       <Navbar />
@@ -23,23 +28,33 @@ function App() {
 
       {/* <h1>Top projects</h1> */}
       <div className="topProjectList">
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() => {
+            setOpenTop(!openTop);
+          }}
+        >
           Top projects
           <br />
-          <img src={fgClosed} alt="" className="fileCab" />
+          <img src={openTop ? fgOpen : fgClosed} alt="" className="fileCab" />
         </button>
-        <TopProjects projects={projects} />
+        {openTop && <TopProjects projects={projects} />}
       </div>
 
       {/* <h1>In progress projects</h1> */}
 
       <div className="inProgressList">
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() => {
+            setOpenProg(!openProg);
+          }}
+        >
           In progress projects
           <br />
-          <img src={fgClosed} alt="" className="fileCab" />
+          <img src={openProg ? fgOpen : fgClosed} alt="" className="fileCab" />
         </button>
-        <InProgress project={progress} />
+        {openProg && <InProgress project={progress} />}
       </div>
 
       {/* <h1>The footer/ Maybe with other socials</h1> */}
