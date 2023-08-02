@@ -22,19 +22,26 @@ function App() {
       <WorkDesc />
 
       {/* <h1>Top projects</h1> */}
-      <button className="btn">
-        Toggle display of projects section
-        <img src={fgClosed} alt="" />
-      </button>
-      <TopProjects projects={projects} />
+      <div className="topProjectList">
+        <button className="btn">
+          Top projects
+          <br />
+          <img src={fgClosed} alt="" className="fileCab" />
+        </button>
+        <TopProjects projects={projects} />
+      </div>
 
       {/* <h1>In progress projects</h1> */}
 
-      <button className="btn">
-        Toggle display of in progress projects section
-        <img src={fgClosed} alt="" />
-      </button>
-      <InProgress project={progress} />
+      <div className="inProgressList">
+        <button className="btn">
+          In progress projects
+          <br />
+          <img src={fgClosed} alt="" className="fileCab" />
+        </button>
+        <InProgress project={progress} />
+      </div>
+
       {/* <h1>The footer/ Maybe with other socials</h1> */}
       <Footer />
     </div>

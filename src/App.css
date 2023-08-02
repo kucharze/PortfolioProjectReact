@@ -26,6 +26,10 @@
   height: 70px;
 }
 
+.fileCab {
+  height: 150px;
+}
+
 .pokemonTitle {
   background-color: darkgreen;
   color: white;
@@ -44,6 +48,15 @@
 .battle {
   display: flex;
   justify-content: space-evenly;
+}
+.inProgressList {
+  display: flex;
+  align-items: center;
+}
+
+.topProjectList {
+  display: flex;
+  align-items: center;
 }
 
 .pokemon {
@@ -90,6 +103,8 @@
 .btn {
   font-size: 20px;
   margin: 1em;
+  width: 25%;
+  height: 300px;
 }
 
 .work {
@@ -106,16 +121,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70%;
+  height: 400px;
 }
 .projLinks {
-  width: 550px;
+  /* width: 550px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 .projLinks > a {
   padding: 10px;
   display: inline-block;
   /* margin-bottom: 10px; */
 }
-
+.progress {
+  border: solid orange;
+  background-color: rgb(184, 210, 250);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
 .progLinks {
   width: 550px;
 }
@@ -143,13 +169,6 @@
 
 .githubLink:hover {
   background-color: yellow;
-}
-
-.progress {
-  border: solid orange;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .footer {
