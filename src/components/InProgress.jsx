@@ -1,21 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Baner from './Baner'
 
 function InProgress({project}) {
+    const [open,setOpen] = useState(false)
+
   return (
     <div className='progress'>
       <h1>In Progress projects</h1>
       <div className="progLinks">
         {
             project.map((item)=>{
-                return <Link to={item.url} key={item.name} className='githubLink'>{item.name}</Link>
+                return <Link to={item.url} key={item.name}>
+                    <div className='inProgressProjects githubLink'>{item.name}</div>
+                    </Link>
             })
 
         }
       </div>
-      <h2>Play the Prototype</h2>
-      <Baner/>
+      <button className='prototype' onClick={()=>{setOpen(!open)}}>Play the Prototype</button>
+      {
+        open && <Baner/>
+      }
+      
     </div>
   )
 }
