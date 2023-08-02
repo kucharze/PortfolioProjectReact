@@ -70,14 +70,26 @@ let AppContextProvider = (props) => {
   };
 
   const getPokemon = async () => {
+    let data;
     try {
-      let item = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${Math.floor(
-          Math.random() * (400 - 1 + 1) + 1
-        )}`
-      );
-      let data = await item.json();
-      console.log(data);
+      while (true) {
+        let item = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${Math.floor(
+            Math.random() * (400 - 1 + 1) + 1
+          )}`
+        );
+        data = await item.json();
+        console.log("Player", data.name);
+        if (
+          //pokemon that can cause issues
+          data.name != "ditto" ||
+          data.name != "magikarp" ||
+          data.name != "caterpie" ||
+          data.name != "weedle"
+        ) {
+          break;
+        }
+      }
       setHealth(data.stats[0].base_stat);
       setPokemon(data);
     } catch (err) {
@@ -88,18 +100,40 @@ let AppContextProvider = (props) => {
 
   const getOpp = async () => {
     try {
-      let item = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${Math.floor(
-          Math.random() * (400 - 1 + 1) + 1
-        )}`
-      );
-      let data = await item.json();
-      console.log("opp:", data);
+      let data;
+      while (true) {
+        let item = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${Math.floor(
+            Math.random() * (400 - 1 + 1) + 1
+          )}`
+        );
+        data = await item.json();
+        console.log("opp:", data.name);
+        if (
+          //pokemon that can cause issues
+          data.name != "ditto" ||
+          data.name != "magikarp" ||
+          data.name != "caterpie" ||
+          data.name != "weedle"
+        ) {
+          break;
+        }
+      }
+      console.log("Hello");
       setOppHealth(data.stats[0].base_stat);
       setOpp(data);
     } catch (err) {
       console.log("We did not find a valid pokemon");
     }
+  };
+
+  const calcPower = (attack, defense) => {
+    let damage = attack - defense;
+
+    if (damage < 5) {
+      damage = 5;
+    }
+    return damage;
   };
 
   const doMove = (move) => {
@@ -119,6 +153,10 @@ let AppContextProvider = (props) => {
         setWinner("com");
       }
     }
+  };
+
+  const newGame = () => {
+    console.log("new game");
   };
 
   return (
@@ -141,6 +179,7 @@ let AppContextProvider = (props) => {
         doMove,
         win,
         winner,
+        newGame,
       }}
     >
       {props.children}
