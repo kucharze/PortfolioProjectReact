@@ -8,6 +8,7 @@ import InProgress from "./components/InProgress";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { projects, progress } from "./models/projects";
+import fgClosed from "./FCGclosed.jpg";
 
 function App() {
   return (
@@ -21,13 +22,17 @@ function App() {
       <WorkDesc />
 
       {/* <h1>Top projects</h1> */}
-      <button className="btn">Toggle display of projects section</button>
+      <button className="btn">
+        Toggle display of projects section
+        <img src={fgClosed} alt="" />
+      </button>
       <TopProjects projects={projects} />
 
       {/* <h1>In progress projects</h1> */}
 
       <button className="btn">
         Toggle display of in progress projects section
+        <img src={fgClosed} alt="" />
       </button>
       <InProgress project={progress} />
       {/* <h1>The footer/ Maybe with other socials</h1> */}
