@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lightgray;
 }
 
 .banner {
@@ -92,6 +93,8 @@
   border: solid red;
   padding: 10px;
   background-color: rgb(161, 195, 248);
+  /* background-image: url("FCGopen.jpg"); */
+  /* background-size: contain; */
   /* height: 300px; */
   display: flex;
   flex-direction: column;
