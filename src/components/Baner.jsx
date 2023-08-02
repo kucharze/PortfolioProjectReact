@@ -3,9 +3,9 @@ import { AppContext } from '../contexts/context';
 
 
 function Baner() {
-  let {pokemon,setPokemon, opp,setOpp,health,oppHealth, 
+  let {pokemon, opp,health,oppHealth, 
     getPokemon, getOpp, moves, oppMoves, getMove,vis,doMove,
-  win, winner} = useContext(AppContext)
+  win, winner, newGame} = useContext(AppContext)
 
   useEffect(() => {
     getPokemon();
@@ -17,8 +17,14 @@ function Baner() {
       <h3 className='pokemonTitle'>Pokemon battle of the day</h3>
       {
         win && (winner == "player" ? 
-        <div><h1>You win</h1></div> : 
-        <div><h1>You lose</h1></div> )
+        <div>
+          <h1>You win</h1>
+          <button onClick={newGame}>Start new game</button>
+        </div> : 
+        <div>
+          <h1>You lose</h1>
+          <button onClick={newGame}>Start new game</button>
+          </div> )
       }
       <div className="battle">
         {
