@@ -34,7 +34,7 @@ function App() {
             setOpenTop(!openTop);
           }}
         >
-          Top projects
+          Completed projects
           <br />
           <img src={openTop ? fgOpen : fgClosed} alt="" className="fileCab" />
         </button>

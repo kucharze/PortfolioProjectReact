@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: lightgray;
+  background-color: rgb(184, 210, 250);
 }
 
 .banner {
@@ -115,6 +115,8 @@
   margin: 1em;
   width: 100%;
   height: 300px;
+  background-color: rgb(83, 162, 114);
+  color: white;
 }
 
 .btnOpen {
@@ -142,6 +144,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .projLinks > a {
   padding: 10px;
