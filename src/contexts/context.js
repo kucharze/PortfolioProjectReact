@@ -79,7 +79,7 @@ let AppContextProvider = (props) => {
           )}`
         );
         data = await item.json();
-        console.log("Player", data.name);
+        console.log("Player", data);
         if (
           //pokemon that can cause issues
           data.name != "ditto" ||
@@ -108,7 +108,7 @@ let AppContextProvider = (props) => {
           )}`
         );
         data = await item.json();
-        console.log("opp:", data.name);
+        console.log("opp:", data);
         if (
           //pokemon that can cause issues
           data.name != "ditto" ||
@@ -128,17 +128,26 @@ let AppContextProvider = (props) => {
   };
 
   const calcPower = (attack, defense) => {
+    console.log(attack, defense);
     let damage = attack - defense;
 
-    if (damage < 5) {
-      damage = 5;
-    }
+    // if (damage < 5) {
+    //   damage = 5;
+    // }
     return damage;
   };
 
   const doMove = (move) => {
     console.log(moves[move].name);
-    setOppHealth(oppHealth - moves[move].power);
+    let value;
+    if (moves[move].damage_class.name == "physical") {
+      console.log("Physical");
+      value = calcPower(pokemon.stats[1].base_stat, opp.stats[2].base_stat);
+    } else {
+      console.log("Special");
+      value = calcPower(pokemon.stats[3].base_stat, opp.stats[4].base_stat);
+    }
+    setOppHealth(oppHealth - (moves[move].power + value));
 
     if (oppHealth - moves[move].power <= 0) {
       console.log("You win");
@@ -146,7 +155,14 @@ let AppContextProvider = (props) => {
       setWinner("player");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
-      let newHealth = health - oppMoves[num].power;
+      if (oppMoves[num].damage_class.name == "physical") {
+        console.log("Physical");
+        value = calcPower(opp.stats[2].base_stat, pokemon.stats[3].base_stat);
+      } else {
+        console.log("Special");
+        value = calcPower(opp.stats[3].base_stat, pokemon.stats[4].base_stat);
+      }
+      let newHealth = health - (oppMoves[num].power + value);
       setHealth(newHealth);
       if (newHealth <= 0) {
         setWin(true);
