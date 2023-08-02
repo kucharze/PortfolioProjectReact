@@ -93,7 +93,7 @@
 .top {
   border: solid red;
   padding: 10px;
-  background-color: rgb(161, 195, 248);
+  background-color: rgb(184, 210, 250);
   /* background-image: url("FCGopen.jpg"); */
   /* background-size: contain; */
   /* height: 300px; */
@@ -120,7 +120,7 @@
 }
 
 .githubLink {
-  border: solid green;
+  /* border: solid green; */
   font-size: 25px;
   margin: 10px;
   height: 200px;
@@ -129,7 +129,7 @@
   text-align: center;
   display: flex;
   align-items: center;
-  background-image: url("Folder-orange.jpg");
+  background-image: url("Folder-orangeblue.jpg");
   background-size: cover;
   /* padding: 3em; */
   /* text-decoration: none; */
