@@ -8,8 +8,7 @@ function Baner() {
   win, winner, newGame} = useContext(AppContext)
 
   useEffect(() => {
-    getPokemon();
-    getOpp();
+    newGame()
   }, []);
 
   return (
