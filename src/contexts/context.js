@@ -157,6 +157,12 @@ let AppContextProvider = (props) => {
 
   const newGame = () => {
     console.log("new game");
+    setVis(true);
+    getPokemon();
+    getOpp();
+    setWin(false);
+    setMoves(null);
+    setOppMoves(null);
   };
 
   return (
