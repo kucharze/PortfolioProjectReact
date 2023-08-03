@@ -3,13 +3,21 @@
   background-color: rgb(184, 210, 250);
 }
 
+.graph {
+  background-color: lightgreen;
+}
+.skill {
+  background-color: lightblue;
+  border: solid green;
+}
 .banner {
   border: solid black;
   color: rgb(54, 60, 152);
-  height: 650px;
+  height: 800px;
   background-size: cover;
-  width: 1000px;
+  width: 1100px;
   font-family: "Comic Sans MS";
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,11 +27,14 @@
   height: 170px;
 }
 .pokemonTitle {
-  background-color: darkgreen;
-  color: white;
+  background-color: rgb(211, 183, 158);
+  color: black;
   /* height: 400px; */
   background-size: cover;
   width: 800px;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
 }
 .battle {
   display: flex;
