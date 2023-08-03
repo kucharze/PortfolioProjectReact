@@ -204,6 +204,7 @@ let AppContextProvider = (props) => {
         win,
         winner,
         newGame,
+        annoucement,
       }}
     >
       {props.children}
