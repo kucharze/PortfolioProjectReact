@@ -9,9 +9,17 @@
   height: 450px;
   background-size: cover;
   width: 1000px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2CDlRXd_HFENyi8EsT0aIpOlFdMFz0ro0FH6XMFmfkXPvZ5MyiTlpu7T5hgaqP5TJTM&usqp=CAU");
 }
+.battle {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
 .projects {
   display: flex;
   justify-content: center;
@@ -54,10 +62,7 @@
   background-size: cover;
   /* width: 800px; */
 }
-.battle {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .inProgressList {
   display: flex;
   align-items: center;
