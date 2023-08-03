@@ -2,6 +2,7 @@ const projects = [
   {
     name: "Cardgames.org",
     url: "https://github.com/kucharze/Cardgames-node",
+    site: "https://card-games-inbc.onrender.com/",
   },
   {
     name: "React employee list",
