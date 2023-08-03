@@ -5,19 +5,29 @@
 
 .banner {
   border: solid black;
-  color: white;
-  height: 450px;
+  color: rgb(54, 60, 122);
+  height: 650px;
   background-size: cover;
-  width: 1000px;
+  width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2CDlRXd_HFENyi8EsT0aIpOlFdMFz0ro0FH6XMFmfkXPvZ5MyiTlpu7T5hgaqP5TJTM&usqp=CAU");
 }
+.pokemon {
+  height: 170px;
+}
+.pokemonTitle {
+  background-color: darkgreen;
+  color: white;
+  /* height: 400px; */
+  background-size: cover;
+  width: 800px;
+}
 .battle {
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
+  width: 85%;
 }
 
 .projects {
@@ -47,14 +57,6 @@
   height: 250px;
 }
 
-.pokemonTitle {
-  background-color: darkgreen;
-  color: white;
-  /* height: 400px; */
-  background-size: cover;
-  width: 800px;
-}
-
 .info {
   background-color: darkgreen;
   color: white;
@@ -75,9 +77,6 @@
   justify-content: center;
 }
 
-.pokemon {
-  height: 100px;
-}
 .moves {
   font-size: 15px;
   background-color: green;
@@ -197,7 +196,7 @@
 }
 
 .footer {
-  border: solid purple;
+  border: solid black;
   background-color: rgb(125, 171, 234);
   color: white;
   display: flex;

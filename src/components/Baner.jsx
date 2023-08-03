@@ -13,21 +13,19 @@ function Baner() {
 
   return (
     <div className='banner'>
-      <h3 className='pokemonTitle'>Pokemon battle prototype</h3>
+      <h2 className='pokemonTitle'>Pokemon battle prototype</h2>
       {
-        win?  (winner == "player" ? 
+        win &&  (winner == "player" ? 
         <div>
-          <h1>You win</h1>
-          <button onClick={newGame}>Start new game</button>
+          <h1 >You win</h1>
+          <button className='moves' onClick={newGame}>Start new game</button>
         </div> : 
         <div>
-          <h1>You lose</h1>
+          <h1 >You lose</h1>
           <button onClick={newGame}>Start new game</button>
-          </div> ) :
-          (
-            <h3>{annoucement}</h3>
-          )
+          </div> ) 
       }
+      <h2 >{annoucement}</h2>
       <div className="battle">
         {
           pokemon ? <div className='pokemondisplay'>
