@@ -18,14 +18,3 @@ function WorkDesc() {
 
 export default WorkDesc
 
-//Google
-/*
-Familiar with Pilars of object oriented programing
-Understand why these are the most value principles
-
-Select a hackerrank problem and copy the problem
-DO NOT ATTEMPT IT!!!!
-
-Get one that you feel you can do, and one that seems impossible
-
-*/
