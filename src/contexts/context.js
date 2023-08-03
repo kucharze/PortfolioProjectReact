@@ -13,6 +13,7 @@ let AppContextProvider = (props) => {
   const [oppHealth, setOppHealth] = useState(0);
   const [win, setWin] = useState(false);
   const [winner, setWinner] = useState(null);
+  const [annoucement, setAnnouncement] = useState("");
 
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
@@ -179,6 +180,7 @@ let AppContextProvider = (props) => {
     setWin(false);
     setMoves(null);
     setOppMoves(null);
+    setAnnouncement("");
   };
 
   return (
