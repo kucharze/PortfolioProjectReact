@@ -6,11 +6,12 @@ function WorkDesc() {
     <div className='work'>
       <div className="graph">
         <h1>Experience level</h1>
-        <Skill skill={'Java'} level={8}/>
-        <Skill skill={"Javascript"} level={8}/>
-        <Skill skill={'C#'} level={7}/>
-        <Skill skill={'Python'} level={7}/>
+        <Skill skill={'Java'} level={7}/>
+        <Skill skill={"Javascript"} level={7}/>
+        <Skill skill={'C#'} level={6}/>
         <Skill skill={'C++'} level={6}/>
+        <Skill skill={'Python'} level={6}/>
+
       </div>
     </div>
   )
