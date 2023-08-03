@@ -1,11 +1,27 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 
-function Skill() {
+function Skill({skill,level}) {
+    const [skills,setSkills] = useState(Array.from({length: level}))
+
+    // useEffect(()=>{
+    //     setSkills((prev)=>{
+    //         for(let i=0; i<level; i++){
+    //             prev.push(i)
+    //         }
+    //         return prev
+    //     })
+    // },[])
+
+
   return (
     <div className='skill'>
       <h1>The skill</h1>
-      <h1>bar</h1>
-      <div className='bar'></div>
+      {
+        skills.map(()=>{
+            return <div className='bar'><h1>Open</h1></div>
+        })
+      }
+
     </div>
   )
 }
