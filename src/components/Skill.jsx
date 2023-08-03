@@ -15,10 +15,10 @@ function Skill({skill,level}) {
 
   return (
     <div className='skill'>
-      <h1>The skill</h1>
+      <h1 className='skillName'>{skill}</h1>
       {
-        skills.map(()=>{
-            return <div className='bar'><h1>Open</h1></div>
+        skills.map((index,i)=>{
+            return <div className='bar' key={i}><h1>{i+1}</h1></div>
         })
       }
 

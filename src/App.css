@@ -11,8 +11,11 @@
   border: solid green;
   display: flex;
 }
+.skillName {
+  width: 10%;
+}
 .bar {
-  width: 19%;
+  width: 18%;
   background-color: darkblue;
   color: white;
   border: solid lime;
