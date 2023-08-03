@@ -8,8 +8,8 @@ import InProgress from "./components/InProgress";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { projects, progress } from "./models/projects";
-import fgClosed from "./FCGclosed.jpg";
-import fgOpen from "./FCGopen.jpg";
+import fgClosed from "./FileClosed_blue.jpg";
+import fgOpen from "./FileOpen-blue.jpg";
 import { useState } from "react";
 
 function App() {
