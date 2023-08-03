@@ -1,16 +1,7 @@
 import React,{useState, useEffect} from 'react'
 
 function Skill({skill,level}) {
-    const [skills,setSkills] = useState(Array.from({length: level}))
-
-    // useEffect(()=>{
-    //     setSkills((prev)=>{
-    //         for(let i=0; i<level; i++){
-    //             prev.push(i)
-    //         }
-    //         return prev
-    //     })
-    // },[])
+    const [skills,setSkills] = useState(Array.from({length: 10}))
 
 
   return (
@@ -18,7 +9,13 @@ function Skill({skill,level}) {
       <h1 className='skillName'>{skill}</h1>
       {
         skills.map((index,i)=>{
-            return <div className='bar' key={i}><h1>{i+1}</h1></div>
+            if(i<level){
+             return <div className='bar' key={i}><h1>{i+1}</h1></div>
+            }
+            else{
+                return <div className='barAbove' key={i}><h1>{i+1}</h1></div>
+            }
+           
         })
       }
 
