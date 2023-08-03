@@ -29,10 +29,8 @@ function Baner() {
       <div className="battle">
         {
           pokemon ? <div className='pokemondisplay'>
-              <h4>Name: {pokemon.name}</h4>
+              <h3>Name: {pokemon.name}</h3>
               <div className="info">
-                  <p>Height: {pokemon.height} M.</p>
-                  <p>Weight: {pokemon.weight} G.</p>
                   <p>Health: {health}</p>
               </div>
               <img src={pokemon.sprites.back_default} alt="" className='pokemon' />
@@ -52,10 +50,8 @@ function Baner() {
         }
         {
           opp ? <div className='pokemondisplay'>
-              <h4>Name: {opp.name}</h4>
+              <h3>Name: {opp.name}</h3>
               <div className="info">
-                  <p>Height: {opp.height} M.</p>
-                  <p>Weight: {opp.weight} G.</p>
                   <p>Health: {oppHealth}</p>
               </div>
               <img src={opp.sprites.front_default} alt="" className='pokemon' />
