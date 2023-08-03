@@ -17,6 +17,7 @@ let AppContextProvider = (props) => {
 
   const getMove = async () => {
     // let item = await fetch(`https://pokeapi.co/api/v2/move/851/`);
+    setAnnouncement("Loading");
     let moveList = [];
     let checked = false;
     let i = 0;
@@ -68,6 +69,7 @@ let AppContextProvider = (props) => {
       i++;
     }
     await setOppMoves(oppList);
+    setAnnouncement("Time to battle");
   };
 
   const getPokemon = async () => {
@@ -156,6 +158,7 @@ let AppContextProvider = (props) => {
       setWinner("player");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
+      setAnnouncement("Opponent used " + oppMoves[num].name);
       if (oppMoves[num].damage_class.name == "physical") {
         console.log("Physical");
         value = calcPower(opp.stats[2].base_stat, pokemon.stats[3].base_stat);
