@@ -7,7 +7,7 @@ function InProgress({project}) {
 
   return (
     <div className='progress'>
-      <h1>In Progress projects</h1>
+      <h1 className='divide'>In Progress projects</h1>
       <div className="progLinks">
         {
             project.map((item)=>{
