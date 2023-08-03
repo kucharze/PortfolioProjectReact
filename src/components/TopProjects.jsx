@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function TopProjects({projects}) {
   return (
     <div className='top'>
-      <h1>Top Projects</h1>
+      <h1>Completed Projects</h1>
       <div className="projLinks">
         {
             projects.map((item)=>{
