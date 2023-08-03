@@ -133,7 +133,7 @@
 }
 
 .top {
-  border: solid white;
+  /* border: solid white; */
   padding: 10px;
   background-color: rgb(184, 210, 250);
   display: flex;
@@ -155,12 +155,12 @@
 }
 
 .progress {
-  border: solid orange;
+  /*border: solid orange;*/
   background-color: rgb(184, 210, 250);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 30%;
 }
 .progLinks {
   width: 550px;
