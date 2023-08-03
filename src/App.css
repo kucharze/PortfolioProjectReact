@@ -9,6 +9,13 @@
 .skill {
   background-color: lightblue;
   border: solid green;
+  display: flex;
+}
+.bar {
+  width: 19%;
+  background-color: darkblue;
+  color: white;
+  border: solid lime;
 }
 .banner {
   border: solid black;
