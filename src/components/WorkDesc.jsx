@@ -5,7 +5,7 @@ function WorkDesc() {
   return (
     <div className='work'>
       <div className="graph">
-        <h1>Experience level</h1>
+        <h1>Skillset</h1>
         <Skill skill={'Java'} level={7}/>
         <Skill skill={"Javascript"} level={7}/>
         <Skill skill={'C#'} level={6}/>
