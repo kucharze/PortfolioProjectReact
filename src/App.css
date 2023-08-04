@@ -93,17 +93,19 @@ li {
 .moves {
   font-size: 15px;
   background-color: rgb(211, 183, 158);
+  /* border-top: solid black; */
   margin: 10px;
   padding: 10px;
 }
 .oppmoves {
-  font-size: 15px;
+  font-size: 20px;
   background-color: rgb(211, 183, 158);
-  border: 1px solid;
+  border: black solid;
   /* padding: 10px; */
   margin: 10px;
 }
 .info {
+  background-color: rgb(107, 194, 207);
   display: flex;
   justify-content: center;
 }
@@ -152,14 +154,6 @@ h1 {
 
 .fileCab {
   height: 250px;
-}
-
-.info {
-  background-color: darkgreen;
-  color: white;
-  /* height: 400px; */
-  background-size: cover;
-  /* width: 800px; */
 }
 
 .inProgressList {
