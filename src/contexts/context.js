@@ -88,7 +88,9 @@ let AppContextProvider = (props) => {
           data.name != "ditto" ||
           data.name != "magikarp" ||
           data.name != "caterpie" ||
-          data.name != "weedle"
+          data.name != "weedle" ||
+          data.name != "metapod" ||
+          data.name != "kakuna"
         ) {
           break;
         }
@@ -117,7 +119,9 @@ let AppContextProvider = (props) => {
           data.name != "ditto" ||
           data.name != "magikarp" ||
           data.name != "caterpie" ||
-          data.name != "weedle"
+          data.name != "weedle" ||
+          data.name != "metapod" ||
+          data.name != "kakuna"
         ) {
           break;
         }
@@ -156,6 +160,7 @@ let AppContextProvider = (props) => {
       console.log("You win");
       setWin(true);
       setWinner("player");
+      setAnnouncement("You win");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
       setAnnouncement("Opponent used " + oppMoves[num].name);
@@ -171,6 +176,7 @@ let AppContextProvider = (props) => {
       if (newHealth <= 0) {
         setWin(true);
         setWinner("com");
+        setAnnouncement("You Lose");
       }
     }
   };
