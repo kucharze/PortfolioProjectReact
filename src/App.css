@@ -68,6 +68,13 @@
   background-size: cover;
   width: 800px;
 }
+.resume {
+  background-color: beige;
+  border: solid black;
+}
+.com {
+  height: 150px;
+}
 h1 {
   font-family: "Times New Roman", Times, serif;
 }

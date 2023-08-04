@@ -10,8 +10,10 @@ import Navbar from "./components/Navbar";
 import { projects, progress } from "./models/projects";
 import fgClosed from "./FileClosed_blue.jpg";
 import fgOpen from "./FileOpen-blue.jpg";
+import com from "./Com.gif";
 import wave from "./ZKwave.gif";
 import { useState } from "react";
+import Resume from "./components/Resume";
 
 function App() {
   const [openTop, setOpenTop] = useState(false);
@@ -25,6 +27,7 @@ function App() {
       {/* <h1>Title header with name and description</h1> */}
       <Title wave={wave} />
 
+      <Resume com={com} />
       {/* <h1>Description of types of work that I have done</h1> */}
       <WorkDesc />
 
