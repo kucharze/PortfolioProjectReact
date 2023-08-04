@@ -17,11 +17,9 @@ function Baner() {
       {
         win &&  (winner == "player" ? 
         <div>
-          <h2 className='annoucement'>You win</h2>
           <button className='moves' onClick={newGame}>Start new game</button>
         </div> : 
         <div>
-          <h2 className='annoucement'>You lose</h2>
           <button onClick={newGame} className='moves'>Start new game</button>
           </div> ) 
       }
@@ -30,10 +28,11 @@ function Baner() {
         {
           pokemon ? <div className='pokemondisplay'>
               <h3>Name: {pokemon.name}</h3>
+
+              <img src={pokemon.sprites.back_default} alt="" className='pokemon' />
               <div className="info">
                   <p>Health: {health}</p>
               </div>
-              <img src={pokemon.sprites.back_default} alt="" className='pokemon' />
               <br/>
               {
                 vis && <button className='moves' onClick={getMove}>Load moves</button>
@@ -51,10 +50,11 @@ function Baner() {
         {
           opp ? <div className='pokemondisplay'>
               <h3>Name: {opp.name}</h3>
+
+              <img src={opp.sprites.front_default} alt="" className='pokemon' />
               <div className="info">
                   <p>Health: {oppHealth}</p>
               </div>
-              <img src={opp.sprites.front_default} alt="" className='pokemon' />
               <br/>
               <p className='oppmoves'>
               {
