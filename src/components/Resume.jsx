@@ -1,10 +1,23 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react'
+import About from './About'
 
 function Resume({com}) {
+  const [open,setOpen] = useState(false)
   return (
     <div className='resume'>
-      <Link className='btn'><img src={com} alt="" className='com'/><br />"More about me"</Link>
+      <button className='btn' onClick={()=>{setOpen(!open)}}><img src={com} alt="" className='com'/><br />"More about me"</button>
+      
+        {
+          open &&     (
+          <div className="aboutsection">
+          <About/>
+          <About/>
+          <About/>
+          <About/>
+          </div>)
+        }
+
+
     </div>
   )
 }

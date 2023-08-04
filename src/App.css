@@ -45,6 +45,16 @@
   border: solid lime;
   margin-right: 20px;
 }
+.aboutsection {
+  display: flex;
+  justify-content: space-evenly;
+}
+.about {
+  border: solid black;
+}
+.des {
+  border: solid black;
+}
 .banner {
   border: solid black;
   color: rgb(54, 60, 152);
