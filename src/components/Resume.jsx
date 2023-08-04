@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Resume() {
+function Resume({com}) {
   return (
-    <div>
-      
+    <div className='resume'>
+      <button className='btn'><img src={com} alt="" className='com'/></button>
     </div>
   )
 }
