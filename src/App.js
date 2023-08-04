@@ -10,18 +10,20 @@ import Navbar from "./components/Navbar";
 import { projects, progress } from "./models/projects";
 import fgClosed from "./FileClosed_blue.jpg";
 import fgOpen from "./FileOpen-blue.jpg";
+import wave from "./ZKwave.gif";
 import { useState } from "react";
 
 function App() {
   const [openTop, setOpenTop] = useState(false);
   const [openProg, setOpenProg] = useState(false);
+  const [exp, setExp] = useState(false);
 
   return (
     <div className="App">
       <Navbar />
 
       {/* <h1>Title header with name and description</h1> */}
-      <Title />
+      <Title wave={wave} />
 
       {/* <h1>Description of types of work that I have done</h1> */}
       <WorkDesc />

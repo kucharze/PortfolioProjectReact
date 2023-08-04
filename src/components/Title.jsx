@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Title() {
+function Title({wave}) {
   return (
     <div className='title'>
       <h1>Zachary Kuchar</h1>
-      <img src="https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" 
+      <img src={wave}
+      //"https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png" 
       alt="profile pic"
       className='profile' />
       <div className='description'>
