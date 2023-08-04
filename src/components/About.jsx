@@ -1,12 +1,20 @@
 import React from 'react'
 
-function About() {
+function About({name,job,description,time}) {
   return (
     <div className='about'>
-      <h1>Display different sections</h1>
+      <h1>{name}</h1>
       <div className='des'>
-        <h2>The desciption section</h2>
+        <h2>{job}</h2>
+        <ul>
+        {
+          description && description.map((item)=>{
+            return <li>{item}</li>
+          })
+        }
+        </ul>
       </div>
+      <div><h3>{time}</h3></div>
     </div>
   )
 }
