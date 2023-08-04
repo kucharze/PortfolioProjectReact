@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Resume({com}) {
   return (
     <div className='resume'>
-      <button className='btn'><img src={com} alt="" className='com'/></button>
+      <Link className='btn'><img src={com} alt="" className='com'/><br />"More about me"</Link>
     </div>
   )
 }
