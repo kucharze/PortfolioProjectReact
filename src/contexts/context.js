@@ -170,12 +170,13 @@ let AppContextProvider = (props) => {
         moves[move].power
       );
     }
-    setOppHealth(value);
+    setOppHealth(oppHealth - value);
 
-    if (value <= 0) {
+    if (oppHealth - value <= 0) {
       console.log("You win");
       setWin(true);
       setWinner("player");
+      setAnnouncement("");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
       setAnnouncement("Opponent used " + oppMoves[num].name);
