@@ -8,8 +8,8 @@ function About({name,job,description,time}) {
         <h2>{job}</h2>
         <ul>
         {
-          description && description.map((item)=>{
-            return <li>{item}</li>
+          description && description.map((item,i)=>{
+            return <li key={i}>{item}</li>
           })
         }
         </ul>
