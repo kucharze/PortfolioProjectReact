@@ -9,7 +9,7 @@
   text-align: center;
 }
 .graph {
-  background-color: lightgreen;
+  background-color: rgb(88, 211, 137);
   /* width: 90%; */
   display: flex;
   flex-direction: column;
@@ -30,11 +30,11 @@
   width: 100px;
   height: 80px;
   border-radius: 50%;
-
   background-color: rgb(83, 162, 114);
   color: white;
-  border: solid lime;
+  /* border: solid lime; */
   margin-right: 20px;
+  margin-top: 10px;
 }
 .barAbove {
   width: 100px;
@@ -42,8 +42,9 @@
   border-radius: 50%;
   background-color: white;
   color: black;
-  border: solid lime;
+  /* border: solid lime; */
   margin-right: 20px;
+  margin-top: 10px;
 }
 .aboutsection {
   display: flex;
@@ -279,9 +280,11 @@ h1 {
 }
 
 .footer {
-  border: solid black;
-  background-color: rgb(125, 171, 234);
-  color: white;
+  /* border: solid black; */
+  /* background-color: rgb(125, 171, 234); */
+  background-color: lightblue;
+  margin-top: 5px;
+  color: black;
   display: flex;
   padding: 1em;
   justify-content: space-evenly;
