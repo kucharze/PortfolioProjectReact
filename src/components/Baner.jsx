@@ -1,10 +1,9 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useEffect, useContext} from 'react'
 import { AppContext } from '../contexts/context';
 
 
 function Baner() {
-  let {pokemon, opp,health,oppHealth, 
-    getPokemon, getOpp, moves, oppMoves, getMove,vis,doMove,
+  let {pokemon, opp,health,oppHealth, moves, oppMoves, getMove,vis,doMove,
   win, winner, newGame,annoucement} = useContext(AppContext)
 
   useEffect(() => {

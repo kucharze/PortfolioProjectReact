@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Baner from "./components/Baner";
 import Title from "./components/Title";
-import WorkDesc from "./components/WorkDesc";
 import TopProjects from "./components/TopProjects";
 import InProgress from "./components/InProgress";
 import Footer from "./components/Footer";
@@ -18,7 +16,6 @@ import Resume from "./components/Resume";
 function App() {
   const [openTop, setOpenTop] = useState(false);
   const [openProg, setOpenProg] = useState(false);
-  const [exp, setExp] = useState(false);
 
   return (
     <div className="App">

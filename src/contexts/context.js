@@ -85,12 +85,12 @@ let AppContextProvider = (props) => {
         console.log("Player", data);
         if (
           //pokemon that can cause issues
-          data.name != "ditto" ||
-          data.name != "magikarp" ||
-          data.name != "caterpie" ||
-          data.name != "weedle" ||
-          data.name != "metapod" ||
-          data.name != "kakuna"
+          data.name !== "ditto" ||
+          data.name !== "magikarp" ||
+          data.name !== "caterpie" ||
+          data.name !== "weedle" ||
+          data.name !== "metapod" ||
+          data.name !== "kakuna"
         ) {
           break;
         }
@@ -116,12 +116,12 @@ let AppContextProvider = (props) => {
         console.log("opp:", data);
         if (
           //pokemon that can cause issues
-          data.name != "ditto" ||
-          data.name != "magikarp" ||
-          data.name != "caterpie" ||
-          data.name != "weedle" ||
-          data.name != "metapod" ||
-          data.name != "kakuna"
+          data.name !== "ditto" ||
+          data.name !== "magikarp" ||
+          data.name !== "caterpie" ||
+          data.name !== "weedle" ||
+          data.name !== "metapod" ||
+          data.name !== "kakuna"
         ) {
           break;
         }
@@ -155,7 +155,7 @@ let AppContextProvider = (props) => {
   const doMove = (move) => {
     console.log(moves[move].name);
     let value;
-    if (moves[move].damage_class.name == "physical") {
+    if (moves[move].damage_class.name === "physical") {
       console.log("Physical");
       value = calcPower(
         pokemon.stats[1].base_stat,
@@ -170,6 +170,12 @@ let AppContextProvider = (props) => {
         moves[move].power
       );
     }
+    let newHealth;
+
+    if (moves[move].accuracy === 100) {
+    }
+
+    newHealth = oppHealth - value;
     setOppHealth(oppHealth - value);
 
     if (oppHealth - value <= 0) {
