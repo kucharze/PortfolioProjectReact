@@ -17,9 +17,11 @@ function Baner() {
       {
         win &&  (winner == "player" ? 
         <div>
+          <h2 className='annoucement'>You win</h2>
           <button className='moves' onClick={newGame}>Start new game</button>
         </div> : 
         <div>
+          <h2 className='annoucement'>You lose</h2>
           <button onClick={newGame} className='moves'>Start new game</button>
           </div> ) 
       }

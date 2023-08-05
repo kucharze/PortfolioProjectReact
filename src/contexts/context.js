@@ -176,7 +176,6 @@ let AppContextProvider = (props) => {
       console.log("You win");
       setWin(true);
       setWinner("player");
-      setAnnouncement(annoucement + "You win");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
       setAnnouncement("Opponent used " + oppMoves[num].name);
@@ -200,9 +199,6 @@ let AppContextProvider = (props) => {
       if (newHealth <= 0) {
         setWin(true);
         setWinner("com");
-        setTimeout(() => {
-          setAnnouncement(annoucement + " You Lose");
-        }, 500);
       }
     }
   };
