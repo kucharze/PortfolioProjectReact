@@ -262,11 +262,16 @@ h1 {
   padding-left: 30px;
   text-align: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-image: url("Folder-orangeblue.jpg");
   background-size: cover;
   /* padding: 3em; */
   /* text-decoration: none; */
+}
+#Cardgames {
+  justify-content: space-evenly;
 }
 
 .githubLink:hover {
