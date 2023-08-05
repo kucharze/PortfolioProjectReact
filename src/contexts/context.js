@@ -22,9 +22,9 @@ let AppContextProvider = (props) => {
     let checked = false;
     let i = 0;
     while (i < 4) {
-      console.log("Trying to poll a move");
+      //console.log("Trying to poll a move");
       let pos = Math.floor(Math.random() * (pokemon.moves.length - 1) + 1);
-      console.log(pokemon.moves[pos].move.url);
+      //console.log(pokemon.moves[pos].move.url);
       let item = await axios.get(`${pokemon.moves[pos].move.url}`);
 
       let data = await item.data;
@@ -55,9 +55,9 @@ let AppContextProvider = (props) => {
     let oppList = [];
     let i = 0;
     while (i < 4) {
-      console.log("Trying to poll an opponent move");
+      //console.log("Trying to poll an opponent move");
       let pos = Math.floor(Math.random() * (opp.moves.length - 1) + 1);
-      console.log(opp.moves[pos].move.url);
+      //console.log(opp.moves[pos].move.url);
       let item = await axios.get(`${opp.moves[pos].move.url}`);
 
       let data = await item.data;
@@ -134,14 +134,22 @@ let AppContextProvider = (props) => {
     }
   };
 
-  const calcPower = (attack, defense) => {
+  const calcPower = (attack, defense, power) => {
     console.log(attack, defense);
-    let damage = attack - defense;
+    let damage = attack / defense;
+    if (damage < 1) {
+      damage = 0.5;
+    } else {
+      damage = 1.5;
+    }
+    let mul = 2 * power * damage;
+    let div = Math.floor(mul / 2) + 2;
+    console.log("damage", div);
 
     // if (damage < 5) {
     //   damage = 5;
     // }
-    return damage;
+    return div;
   };
 
   const doMove = (move) => {
@@ -149,34 +157,52 @@ let AppContextProvider = (props) => {
     let value;
     if (moves[move].damage_class.name == "physical") {
       console.log("Physical");
-      value = calcPower(pokemon.stats[1].base_stat, opp.stats[2].base_stat);
+      value = calcPower(
+        pokemon.stats[1].base_stat,
+        opp.stats[2].base_stat,
+        moves[move].power
+      );
     } else {
       console.log("Special");
-      value = calcPower(pokemon.stats[3].base_stat, opp.stats[4].base_stat);
+      value = calcPower(
+        pokemon.stats[3].base_stat,
+        opp.stats[4].base_stat,
+        moves[move].power
+      );
     }
-    setOppHealth(oppHealth - (moves[move].power + value));
+    setOppHealth(value);
 
-    if (oppHealth - moves[move].power <= 0) {
+    if (value <= 0) {
       console.log("You win");
       setWin(true);
       setWinner("player");
-      setAnnouncement("You win");
+      setAnnouncement(annoucement + "You win");
     } else {
       let num = Math.floor(Math.random() * (4 - 0) + 0);
       setAnnouncement("Opponent used " + oppMoves[num].name);
       if (oppMoves[num].damage_class.name == "physical") {
         console.log("Physical");
-        value = calcPower(opp.stats[2].base_stat, pokemon.stats[3].base_stat);
+        value = calcPower(
+          opp.stats[2].base_stat,
+          pokemon.stats[3].base_stat,
+          oppMoves[num].power
+        );
       } else {
         console.log("Special");
-        value = calcPower(opp.stats[3].base_stat, pokemon.stats[4].base_stat);
+        value = calcPower(
+          opp.stats[3].base_stat,
+          pokemon.stats[4].base_stat,
+          oppMoves[num].power
+        );
       }
-      let newHealth = health - (oppMoves[num].power + value);
+      let newHealth = health - value;
       setHealth(newHealth);
       if (newHealth <= 0) {
         setWin(true);
         setWinner("com");
-        setAnnouncement("You Lose");
+        setTimeout(() => {
+          setAnnouncement(annoucement + " You Lose");
+        }, 500);
       }
     }
   };
