@@ -28,8 +28,6 @@ function App() {
       <Title wave={wave} />
 
       <Resume com={com} />
-      {/* <h1>Description of types of work that I have done</h1> */}
-      <WorkDesc />
 
       <div className="projects">
         <button

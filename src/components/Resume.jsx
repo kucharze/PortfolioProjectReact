@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import About from './About'
+import WorkDesc from './WorkDesc'
 
 function Resume({com}) {
   const [open,setOpen] = useState(false)
@@ -8,7 +9,9 @@ function Resume({com}) {
       <button className='btn' onClick={()=>{setOpen(!open)}}><img src={com} alt="" className='com'/><br />"More about me"</button>
       
         {
-          open &&     (
+          open &&     (<div className="dispplay">
+
+          
           <div className="aboutsection">
           <About name={"Professional experience"}
           job={"Siemens V&V Test Engineer"}
@@ -30,6 +33,10 @@ function Resume({com}) {
           ]}
           time={"September 2015 - May 2019"}
           />
+          </div>
+                {/* <h1>Description of types of work that I have done</h1> */}
+      <WorkDesc />
+          
           </div>)
         }
 
