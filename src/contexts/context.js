@@ -37,7 +37,7 @@ let AppContextProvider = (props) => {
           break;
         }
       }
-      if (checked == true) {
+      if (checked === true) {
         checked = false;
         continue;
       }
@@ -172,42 +172,76 @@ let AppContextProvider = (props) => {
     }
     let newHealth;
 
-    if (moves[move].accuracy === 100) {
-    }
-
-    newHealth = oppHealth - value;
-    setOppHealth(oppHealth - value);
-
-    if (oppHealth - value <= 0) {
-      console.log("You win");
-      setWin(true);
-      setWinner("player");
-      setAnnouncement("");
+    console.log(moves[move].accuracy);
+    //accuracy calculation
+    if (moves[move].accuracy === 100 || moves[move].accuracy === null) {
+      newHealth = oppHealth - value;
     } else {
-      let num = Math.floor(Math.random() * (4 - 0) + 0);
-      setAnnouncement("Opponent used " + oppMoves[num].name);
-      if (oppMoves[num].damage_class.name == "physical") {
-        console.log("Physical");
-        value = calcPower(
-          opp.stats[2].base_stat,
-          pokemon.stats[3].base_stat,
-          oppMoves[num].power
-        );
+      let num = Math.floor(Math.random() * (100 - 1) + 1);
+      setAnnouncement("You hit");
+      if (num >= moves[move].accuracy) {
+        newHealth = oppHealth - value;
+        setAnnouncement("You hit");
       } else {
-        console.log("Special");
-        value = calcPower(
-          opp.stats[3].base_stat,
-          pokemon.stats[4].base_stat,
-          oppMoves[num].power
-        );
-      }
-      let newHealth = health - value;
-      setHealth(newHealth);
-      if (newHealth <= 0) {
-        setWin(true);
-        setWinner("com");
+        newHealth = oppHealth;
+        setAnnouncement("You missed");
       }
     }
+    setTimeout(() => {
+      setOppHealth(newHealth);
+
+      if (newHealth <= 0) {
+        console.log("You win");
+        setWin(true);
+        setWinner("player");
+        setAnnouncement("");
+      } else {
+        let num = Math.floor(Math.random() * (4 - 0) + 0);
+        setAnnouncement("Opponent used " + oppMoves[num].name);
+        if (oppMoves[num].damage_class.name === "physical") {
+          console.log("Physical");
+          value = calcPower(
+            opp.stats[2].base_stat,
+            pokemon.stats[3].base_stat,
+            oppMoves[num].power
+          );
+        } else {
+          console.log("Special");
+          value = calcPower(
+            opp.stats[3].base_stat,
+            pokemon.stats[4].base_stat,
+            oppMoves[num].power
+          );
+        }
+        let newHealth;
+        newHealth = health - value;
+
+        setTimeout(() => {
+          //accuracy calculation
+          console.log("Opp Accuray", oppMoves[num].accuracy);
+          if (
+            oppMoves[num].accuracy === 100 ||
+            oppMoves[num].accuracy === null
+          ) {
+            newHealth = health - value;
+          } else {
+            let num = Math.floor(Math.random() * (100 - 1) + 1);
+            if (num >= oppMoves[num].accuracy) {
+              newHealth = health - value;
+            } else {
+              newHealth = health;
+              setAnnouncement("Opponent missed");
+            }
+          }
+
+          setHealth(newHealth);
+          if (newHealth <= 0) {
+            setWin(true);
+            setWinner("com");
+          }
+        }, 1000);
+      }
+    }, 1000);
   };
 
   const newGame = () => {
