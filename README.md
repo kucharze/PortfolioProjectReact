@@ -16,7 +16,7 @@ API pulls logic for pokemon and moves and does calulations for power and accurac
 
 ### Live site
 
-Having issues, will be available as soon as it is ready
+https://portfolio-0ftd.onrender.com/
 
 ## Site nav
 
