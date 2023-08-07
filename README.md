@@ -17,3 +17,11 @@ API pulls logic for pokemon and moves and does calulations for power and accurac
 ### Live site
 
 Having issues, will be available as soon as it is ready
+
+## Site nav
+
+You can see about me sections at the top
+
+As we scroll down we see my skills as well as different projects that I have done
+
+We can then see the prototype for the Pokemon battle simulator
